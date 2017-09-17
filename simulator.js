@@ -1,12 +1,14 @@
 console.log("welcome to Toy Robot Simulator");
 
-// robot exists as coords + facing values e.g. (0,0,north) or (2,3,south)
-// when robot 'reports', returns the current coords and facing
+/* robot exists as coords + facing values e.g. (0,0,north) or (2,3,south)
+when robot 'reports', returns the current coords and facing */
 
 var cardinalDirection = ["north", "south", "east", "west"];
 var robotFacing;
 var robotPosition;
 var tableSize = [5,5];
+
+/* set table boundary, below 0/0 and beyond 5/5 */
 
 var report = function() {
 	console.log('robot is at ' + robotPosition + ', facing ' + robotFacing + '.');
@@ -29,7 +31,7 @@ var placedCheck = function() {
 
 var move = function() {
 	if (placedCheck()) {
-		var newPosition = robotPosition.slice(0);
+		var newPosition = robotPosition.slice();
 		switch (robotFacing) {
 			case "north":
 				newPosition[1]++;
@@ -43,7 +45,6 @@ var move = function() {
 			case "west":
 				newPosition[0]--;
 				break;
-		}
 		// if (robotFacing === "north") {
 		// 	newPosition[1]++;
 		// } else if (robotFacing === "south") {
@@ -53,9 +54,13 @@ var move = function() {
 		// } else if (robotFacing === "west") {
 		// 	newPosition[0]--;
 		// }
+		}
+		/*work out conditionals - pos numbers not to exceed 0-5*/
 		robotPosition = newPosition;
 		console.log('robot moved to ' + robotPosition);
 	} else {
 		console.log('robot not on table')
 	}
 };
+
+/*find current facing, add/subtract to turn left/right*/
