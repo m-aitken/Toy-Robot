@@ -55,7 +55,7 @@ var move = function() {
 		// 	newPosition[0]--;
 		// }
 		}
-		/*work out conditionals - pos numbers not to exceed 0-5*/
+		/* work out conditionals - pos numbers not to exceed 0-5 */
 		robotPosition = newPosition;
 		console.log('robot moved to ' + robotPosition);
 	} else {
@@ -63,4 +63,4 @@ var move = function() {
 	}
 };
 
-/* find current facing in facing array, add/subtract index to turn left/right*/
+/* find current facing in facing array, add/subtract index to turn left/right */
