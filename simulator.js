@@ -22,24 +22,40 @@ var place = function(x, y, f) {
 var placedCheck = function() {
 	if (robotPosition !== undefined) {
 		return true;
-		} else {
+	} else {
 			return false;
-		}
+	}
 };
 
 var move = function() {
 	if (placedCheck()) {
 		var newPosition = robotPosition.slice(0);
-		if (robotFacing === "north") {
-			newPosition[1]++;
-		} else if (robotFacing === "south") {
-			newPosition[1]--;
-		} else if (robotFacing === "east") {
-			newPosition[0]++;
-		} else if (robotFacing === "west") {
-			newPosition[0]--;
+		switch (robotFacing) {
+			case "north":
+				newPosition[1]++;
+				break;
+			case "south":
+				newPosition[1]--;
+				break;
+			case "east":
+				newPosition[0]++;
+				break;
+			case "west":
+				newPosition[0]--;
+				break;
 		}
+		// if (robotFacing === "north") {
+		// 	newPosition[1]++;
+		// } else if (robotFacing === "south") {
+		// 	newPosition[1]--;
+		// } else if (robotFacing === "east") {
+		// 	newPosition[0]++;
+		// } else if (robotFacing === "west") {
+		// 	newPosition[0]--;
+		// }
 		robotPosition = newPosition;
 		console.log('robot moved to ' + robotPosition);
+	} else {
+		console.log('robot not on table')
 	}
 };
