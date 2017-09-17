@@ -27,8 +27,19 @@ var placedCheck = function() {
 		}
 };
 
-// var move = function() {
-// 	if (placedCheck()) {
-
-// 	}
-// }
+var move = function() {
+	if (placedCheck()) {
+		var newPosition = robotPosition.slice(0);
+		if (robotFacing === "north") {
+			newPosition[1]++;
+		} else if (robotFacing === "south") {
+			newPosition[1]--;
+		} else if (robotFacing === "east") {
+			newPosition[0]++;
+		} else if (robotFacing === "west") {
+			newPosition[0]--;
+		}
+		robotPosition = newPosition;
+		console.log('robot moved to ' + robotPosition);
+	}
+};
