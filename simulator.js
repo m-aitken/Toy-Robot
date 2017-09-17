@@ -63,4 +63,4 @@ var move = function() {
 	}
 };
 
-/*find current facing, add/subtract to turn left/right*/
+/* find current facing in facing array, add/subtract index to turn left/right*/
