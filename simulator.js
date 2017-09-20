@@ -8,8 +8,6 @@ var robotFacing;
 var robotPosition;
 var tableSize = [5,5];
 
-/* set table boundary, below 0/0 and beyond 5/5 */
-
 var report = function() {
 	console.log('robot is at ' + robotPosition + ', facing ' + robotFacing + '.');
 };
@@ -28,6 +26,18 @@ var placedCheck = function() {
 			return false;
 	}
 };
+
+/* set table boundary, below 0/0 and beyond 5/5 */
+
+// TESTING LIMITS
+var lessZero = function (position) {
+	return position < 0;
+};
+
+var exceedFive = function (position) {
+	return position > 5;
+};
+
 
 var move = function() {
 	if (placedCheck()) {
@@ -56,10 +66,13 @@ var move = function() {
 		// }
 		}
 		/* work out conditionals - pos numbers not to exceed 0-5 */
-		robotPosition = newPosition;
-		console.log('robot moved to ' + robotPosition);
-	} else {
-		console.log('robot not on table')
+		if (newPosition.some(lessZero) || newPosition.some(exceedFive)) {
+			console.log('cannot move off table');
+		} else {
+			robotPosition = newPosition;
+			console.log('robot moved to ' + robotPosition);
+			// console.log('robot not on table')
+		}
 	}
 };
 
