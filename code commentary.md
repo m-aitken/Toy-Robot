@@ -1,11 +1,13 @@
 #### Block comments used in the code to record my notes for further development.
 
-## set table limits:
+## ~~set table limits:~~
 
-* west/south limits < 0
-* east/north limits > 5
+* ~~west/south limits < 0~~
+* ~~east/north limits > 5~~
 
-Develop move() function to utilise limits(conditionals)
+~~Develop move() function to utilise limits(conditionals)~~
+
+Robot move limitation per table size implemented.
 
 ## change facing:
 
